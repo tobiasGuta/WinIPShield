@@ -1,9 +1,3 @@
-
-### Updated Python Script:
-
-Now, let’s make the necessary changes in the Python script so that the IPs are not printed to the console but are written only to the text file:
-
-```python
 import requests
 import csv
 import subprocess
