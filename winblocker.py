@@ -36,16 +36,18 @@ valid_ips = []
 # Process the CSV file content
 csv_reader = csv.reader(response.text.splitlines())
 for row in csv_reader:
+    # Skip lines that are comments (starting with #) or headers
+    if row and (row[0].startswith('#') or row[0] in ['first_seen_utc', 'dst_port', 'c2_status', 'last_online', 'malware']):
+        continue
+
     for ip in row:
-        # Strip any leading/trailing whitespace
-        ip = ip.strip()
+        ip = ip.strip()  # Strip any leading/trailing whitespace
         # Skip empty entries or headers (e.g., if it's not an IP)
         if ip and ip != "dst_ip" and ip_pattern.match(ip):
             valid_ips.append(ip)
-        else:
+        elif ip and ip != "dst_ip":
             # Log suspicious or malformed entries
-            if ip and ip != "dst_ip":
-                print(f"Suspicious entry found: {ip} (ignoring)")
+            print(f"Suspicious entry found: {ip} (ignoring)")
 
 # Check if any valid IPs were found
 if not valid_ips:
