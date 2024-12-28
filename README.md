@@ -69,8 +69,12 @@ Example Output:
 Fetching IP blocklist from Abuse.ch...
 Validating IP addresses...
 Creating review file: ip_blocklist_to_add.txt...
-Review the list in 'ip_blocklist_to_add.txt'.
-Are these IPs correct? (Y/N):
+IP blocklist has been saved to 'ip_blocklist_to_add.txt'. Please review it.
+Is the list correct? (Y/N): Y
+Blocking IP: 185.61.177.17
+IP 185.61.177.18 is already blocked. Skipping.
+Blocking IP: 185.61.177.19
+IP blocklist processing complete.
 ```
 
 Type Y to proceed, or N to abort the process. If you type Y, the tool will automatically add the rules to your Windows firewall to block those IPs.
