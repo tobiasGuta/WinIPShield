@@ -78,3 +78,10 @@ Type Y to proceed, or N to abort the process. If you type Y, the tool will autom
 Step 5: Firewall Rules Added
 Once the process is complete, you’ll see a confirmation message:
 
+Requirements
+Windows OS
+Administrator privileges (for modifying firewall rules)
+Python 3.x
+requests library (installable via pip)
+
+
